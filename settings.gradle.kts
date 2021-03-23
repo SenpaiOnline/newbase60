@@ -1,0 +1,2 @@
+rootProject.name = "newbase60"
+
