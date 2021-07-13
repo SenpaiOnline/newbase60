@@ -15,12 +15,12 @@ dependencies {
 
 tasks {
     compileKotlin {
-        kotlinOptions.languageVersion = "1.2"
-        kotlinOptions.jvmTarget = "6"
+        kotlinOptions.languageVersion = "1.3"
+        kotlinOptions.jvmTarget = "1.6"
     }
     compileTestKotlin {
-        kotlinOptions.languageVersion = "1.2"
-        kotlinOptions.jvmTarget = "6"
+        kotlinOptions.languageVersion = "1.3"
+        kotlinOptions.jvmTarget = "1.8"
     }
     test {
         useJUnitPlatform()
