@@ -21,6 +21,7 @@ tasks {
     compileTestKotlin {
         kotlinOptions.languageVersion = "1.3"
         kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
     test {
         useJUnitPlatform()
