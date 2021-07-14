@@ -16,7 +16,7 @@ fun numberToSexagesimal(number: Long): String {
     val sb = StringBuilder()
     var n: Long = number
     while (n > 0) {
-        sb.append(TABLE[(n % 60).toInt()])
+        sb.append(CHARACTERS[(n % 60).toInt()])
         n /= 60
     }
     return sb.reverse().toString()
@@ -29,9 +29,8 @@ fun numberToSexagesimal(number: Long): String {
  * @throws ParseException if the sexagesimal contains invalid characters.
  */
 @Throws(ParseException::class)
-fun sexagesimalToNumber(sexagesimal: String): Long {
-    var number: Long = 0
-    sexagesimal.forEachIndexed { index: Int, char: Char ->
+fun sexagesimalToNumber(sexagesimal: String): Long =
+    sexagesimal.foldIndexed(initial = 0L) { index: Int, number: Long, char: Char ->
         var charCode: Int = char.toInt()
         when (charCode) {
             in 48..57 -> charCode -= 48   // 0-9
@@ -45,7 +44,5 @@ fun sexagesimalToNumber(sexagesimal: String): Long {
             in 109..122 -> charCode -= 63 // m-z
             else -> throw ParseException("Couldn't parse the character \"$char\"", index)
         }
-        number = 60 * number + charCode
+        number * 60 + charCode
     }
-    return number
-}
