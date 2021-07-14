@@ -9,17 +9,20 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
-    testImplementation("io.kotest:kotest-runner-junit5:4.6.0")
+    testImplementation("io.kotest:kotest-runner-junit5:4.6.1")
+    testImplementation("io.kotest:kotest-framework-datatest:4.6.1")
+    testImplementation("io.kotest:kotest-property:4.6.1")
 }
 
 tasks {
     compileKotlin {
-        kotlinOptions.languageVersion = "1.2"
-        kotlinOptions.jvmTarget = "6"
+        kotlinOptions.languageVersion = "1.3"
+        kotlinOptions.jvmTarget = "1.6"
     }
     compileTestKotlin {
-        kotlinOptions.languageVersion = "1.2"
-        kotlinOptions.jvmTarget = "6"
+        kotlinOptions.languageVersion = "1.3"
+        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
     test {
         useJUnitPlatform()
