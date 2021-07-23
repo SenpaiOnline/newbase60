@@ -1,4 +1,5 @@
-![Maven Central](https://img.shields.io/maven-central/v/online.senpai/newbase60?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/SenpaiOnline/newbase60?style=for-the-badge)
+[![Maven Central](https://img.shields.io/maven-central/v/online.senpai/newbase60?style=for-the-badge)](https://search.maven.org/search?q=g:%22online.senpai%22%20AND%20a:%22newbase60%22) 
+[![GitHub](https://img.shields.io/github/license/SenpaiOnline/newbase60?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 This is yet another implementation of NewBase60 algorithm made for Kotlin and Java.
 
@@ -24,16 +25,16 @@ The artifact is available on [Maven Central](https://search.maven.org/search?q=a
 <dependency>
   <groupId>online.senpai</groupId>
   <artifactId>newbase60</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 #### Gradle Groovy DSL
 ```groovy
-implementation 'online.senpai:newbase60:1.0.0'
+implementation 'online.senpai:newbase60:1.0.1'
 ```
 #### Gradle Kotlin DSL
 ```kotlin
-implementation("online.senpai:newbase60:1.0.0")
+implementation("online.senpai:newbase60:1.0.1")
 ```
 ### License
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
