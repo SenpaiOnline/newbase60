@@ -20,13 +20,19 @@ dependencies {
 
 tasks {
     compileKotlin {
-        kotlinOptions.languageVersion = "1.3"
-        kotlinOptions.jvmTarget = "1.6"
+        kotlinOptions.languageVersion = "1.4"
+        kotlinOptions.jvmTarget = "1.8"
     }
     compileTestKotlin {
-        kotlinOptions.languageVersion = "1.3"
+        kotlinOptions.languageVersion = "1.4"
         kotlinOptions.jvmTarget = "1.8"
         kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+    compileJava {
+        options.release.set(8)
+    }
+    compileTestJava {
+        options.release.set(8)
     }
     test {
         useJUnitPlatform()

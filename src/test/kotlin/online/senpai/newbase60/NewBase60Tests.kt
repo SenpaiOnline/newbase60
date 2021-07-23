@@ -29,13 +29,13 @@ import java.text.ParseException
 class NewBase60Tests : FunSpec({
     context("number to newbase60 tests") {
         context("simple cases") {
-            withData<Pair<Long, String>>(
-                { pair: Pair<Long, String> -> "${pair.first}L to ${pair.second}" },
+            withData(
+                nameFn = { pair: Pair<Long, String> -> "${pair.first}L to ${pair.second}" },
                 0L to "0",
                 1L to "1",
                 60L to "10",
                 120L to "20",
-                1337L to "NH"
+                1337L to "NH",
             ) { (number: Long, sexagesimal: String) ->
                 numberToSexagesimal(number).shouldBeEqualComparingTo(sexagesimal)
             }
@@ -47,8 +47,8 @@ class NewBase60Tests : FunSpec({
 
     context("newbase60 to number tests") {
         context("simple cases") {
-            withData<Pair<String, Long>>(
-                { pair: Pair<String, Long> -> "${pair.first} to ${pair.second}L" },
+            withData(
+                nameFn = { pair: Pair<String, Long> -> "${pair.first} to ${pair.second}L" },
                 "0" to 0L,
                 "1" to 1L,
                 "10" to 60L,
